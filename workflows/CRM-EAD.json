@@ -1,0 +1,2364 @@
+{
+  "createdAt": "2025-05-28T15:43:55.027Z",
+  "updatedAt": "2025-05-28T16:08:12.828Z",
+  "id": "VzzKHDHJQodwZcB8",
+  "name": "CRM-EAD",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "content": "# BACKLOG",
+        "height": 80,
+        "width": 380,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2780,
+        -660
+      ],
+      "typeVersion": 1,
+      "id": "804a5863-2ea2-44cd-acf4-138fc8f45caa",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "ㅤ\nㅤ\n✅ ...\n⬜ ...",
+        "height": 400,
+        "width": 520
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2800,
+        -620
+      ],
+      "typeVersion": 1,
+      "id": "7f4cbbe1-859c-4d2b-bbd3-ac2db1011957",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 400,
+        "width": 520
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2280,
+        -620
+      ],
+      "typeVersion": 1,
+      "id": "0ebc4218-986c-4bc5-8c7e-43b97fde008f",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0a2f2b66-7117-4366-bcfe-4db213d48f58",
+              "name": "evolution.dominio",
+              "value": "={{ $('RECEBE DADOS DA MENSAGEM').item.json.body.server_url }}",
+              "type": "string"
+            },
+            {
+              "id": "bd6e42da-6830-4fb0-ab77-3a09119db812",
+              "name": "evolution.apiKey",
+              "value": "={{ $('RECEBE DADOS DA MENSAGEM').item.json.body.apikey }}",
+              "type": "string"
+            },
+            {
+              "id": "81e81d16-9a72-4a78-9883-c83df2379afa",
+              "name": "evolution.instancia",
+              "value": "={{ $('RECEBE DADOS DA MENSAGEM').item.json.body.instance }}",
+              "type": "string"
+            },
+            {
+              "id": "065007b3-d644-4616-9696-853f1028534f",
+              "name": "celular",
+              "value": "={{ $('RECEBE DADOS DA MENSAGEM').item.json.body.data.key.remoteJid.replace(/\\D/g, '').replace(/^55(\\d{2})(\\d{8})$/, '55$19$2') }}",
+              "type": "string"
+            },
+            {
+              "id": "8b9e4aef-f853-4c11-95da-1e6af280a03f",
+              "name": "mensagem.id",
+              "value": "={{ $('RECEBE DADOS DA MENSAGEM').item.json.body.data.key.id }}",
+              "type": "string"
+            },
+            {
+              "id": "d155928e-83a0-4f1e-be86-dcf0787d27a9",
+              "name": "mensagem.timestamp",
+              "value": "={{ $('RECEBE DADOS DA MENSAGEM').item.json.body.data.messageTimestamp.toDateTime('s').toISO() }}",
+              "type": "string"
+            },
+            {
+              "id": "b71a74d7-6432-4f5e-94e5-134a2032f66b",
+              "name": "mensagem.from",
+              "value": "={{ $('RECEBE DADOS DA MENSAGEM').item.json.body.data.fromMe ? 'outcoming' : 'incoming'  }}",
+              "type": "string"
+            },
+            {
+              "id": "a8718685-7168-4e64-9395-dab9799ac459",
+              "name": "mensagem.conteudo",
+              "value": "={{ $('RECEBE DADOS DA MENSAGEM').item.json.body.data.message.conversation  }}",
+              "type": "string"
+            },
+            {
+              "id": "66219348-821b-4705-96e9-63c257374a1a",
+              "name": "mensagem.tipo",
+              "value": "={{ $('RECEBE DADOS DA MENSAGEM').item.json.body.data.messageType  }}",
+              "type": "string"
+            },
+            {
+              "id": "d15770e8-e366-4504-8c00-68b82a038149",
+              "name": "mensagem.base64",
+              "value": "={{ $('RECEBE DADOS DA MENSAGEM').item.json.body.data.message.base64 || '' }}",
+              "type": "string"
+            },
+            {
+              "id": "d876ba58-2ab0-44d3-b578-7aa57fcca6d7",
+              "name": "mensagem.urlArquivo",
+              "value": "={{ $('RECEBE DADOS DA MENSAGEM').item.json.body.data.message.imageMessage?.url || $('RECEBE DADOS DA MENSAGEM').item.json.body.data.message.documentMessage?.url || $('RECEBE DADOS DA MENSAGEM').item.json.body.data.message.audioMessage?.url || ''}}",
+              "type": "string"
+            },
+            {
+              "id": "e7ce94b5-56b0-407d-b34a-06ca68acb68e",
+              "name": "mensagem.arquivoCaption",
+              "value": "={{ $('RECEBE DADOS DA MENSAGEM').item.json.body.data.message.imageMessage?.caption || $('RECEBE DADOS DA MENSAGEM').item.json.body.data.message.documentMessage?.caption || ''}}",
+              "type": "string"
+            },
+            {
+              "id": "9502de3b-9e49-4cdf-9e75-25e45ef00876",
+              "name": "mensagem.tempoEsperaMensagemPicotada",
+              "value": "10",
+              "type": "string"
+            },
+            {
+              "id": "50e98c37-b175-48b8-a1dd-abfa7e2c3477",
+              "name": "mensagem.linkPreview",
+              "value": false,
+              "type": "boolean"
+            },
+            {
+              "id": "778e7cc5-2941-43b8-b305-47486da0e1a1",
+              "name": "mensagem.delayDigitando",
+              "value": 1200,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -2980,
+        20
+      ],
+      "id": "0d60d193-d562-42f0-b3fb-b21d9cbaf4a9",
+      "name": "NORMATIZAÇÃO DE DADOS"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "75b47882-5b4c-40e8-97ec-f3d421bc2f6c",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -3200,
+        20
+      ],
+      "id": "3aa4420e-c2c0-49f1-8de0-ebbe0d83cb17",
+      "name": "RECEBE DADOS DA MENSAGEM",
+      "webhookId": "75b47882-5b4c-40e8-97ec-f3d421bc2f6c"
+    },
+    {
+      "parameters": {
+        "dataToSave": {
+          "values": [
+            {
+              "key": "celular",
+              "value": "={{ $json.celular }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executionData",
+      "typeVersion": 1,
+      "position": [
+        -2760,
+        20
+      ],
+      "id": "b830da7a-afb0-4c95-b5f3-4c57e4c8c241",
+      "name": "LOG DE EXECUÇÃO"
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.celular }}_stop_bot",
+        "value": "true",
+        "keyType": "string",
+        "expire": true,
+        "ttl": "={{ 60 * 5 }}"
+      },
+      "id": "b66a1356-0fae-48df-9cfc-a31daa9eb358",
+      "name": "PAUSA BOT PARA ATENDIMENTO HUMANO",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -2320,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "stop_bot",
+        "key": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.celular }}_stop_bot",
+        "options": {}
+      },
+      "id": "699888c5-ffe4-4316-b6c8-f93ad211dc4f",
+      "name": "CHECA ATENDIMENTO HUMANO",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -2320,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 820,
+        "width": 760
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2600,
+        -160
+      ],
+      "typeVersion": 1,
+      "id": "0eb1a043-3e46-4263-a296-637d5d112a34",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## PAUSA BOT PARA ATENDIMENTO HUMANO",
+        "height": 80,
+        "width": 580,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2580,
+        -200
+      ],
+      "typeVersion": 1,
+      "id": "1b1b587e-7f73-42ac-928b-d841cc0274ba",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "options": {}
+      },
+      "id": "a4875116-5d38-436d-9245-b9f48fba8805",
+      "name": "OpenAI",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        -160,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 820,
+        "width": 1380
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -860,
+        -160
+      ],
+      "typeVersion": 1,
+      "id": "5d63beda-4aa5-4d4a-8d9c-877e9e92ec44",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## CLASSIFICADOR E EXTRATOR(AUDIO/IMAGEM) DE MENSAGENS",
+        "height": 80,
+        "width": 760,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -840,
+        -200
+      ],
+      "typeVersion": 1,
+      "id": "83659a3c-e1ae-4005-acb5-ac60e6337d12",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.from }}",
+                    "rightValue": "incoming",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "80d03a7a-c0ce-4aef-9fd3-5baa21ded8ab"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "SEGUE O FLUXO"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "1e3d5f34-cae3-4893-8ff4-83617890c973",
+                    "leftValue": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.from }}",
+                    "rightValue": "outcoming",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "PAUSA BOT PARA ATENDIMENTO HUMANO"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -2540,
+        20
+      ],
+      "id": "65fc8436-81ec-42b8-a5ec-f3d1120b17f4",
+      "name": "CHECA ORIGEM DA MENSAGEM"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "id": "3ef0e01c-cc14-4663-bb4d-2905b350c3ab",
+                    "leftValue": "={{ $('CHECA ATENDIMENTO HUMANO').item.json.stop_bot }}",
+                    "rightValue": "true",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "HUMANO ATENDENDO"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('CHECA ATENDIMENTO HUMANO').item.json.stop_bot }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "empty",
+                      "singleValue": true
+                    },
+                    "id": "12898fec-c2e1-41d4-90b5-bf496486eb66"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "BOT ATENDENDO"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "411104b0-43ca-43a9-ae31-e0dbcf293705",
+      "name": "CHECA ATENDIMENTO(BOT/HUMANO)",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        -2100,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "id": "52aaf749-fe4f-44e4-880e-15b2bfc027f1",
+                    "leftValue": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.tipo }}",
+                    "rightValue": "extendedTextMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "TEXTO"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "id": "e514e613-fd6a-48bd-b0ae-bae2448c810e",
+                    "leftValue": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.tipo }}",
+                    "rightValue": "conversation",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "TEXTO"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.tipo }}",
+                    "rightValue": "audioMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "AUDIO"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "id": "c0e434dd-1268-421d-b81b-3a5e90ed9550",
+                    "leftValue": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.tipo }}",
+                    "rightValue": "imageMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "IMAGEM"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "35c73a97-cbae-450c-8331-96b3e2c28334",
+      "name": "CHECA TIPO DE MENSAGEM",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        -820,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "data",
+        "options": {
+          "fileName": "file.ogg",
+          "mimeType": "application/ogg"
+        }
+      },
+      "id": "4ebcad4a-ec04-4ded-85a0-adff4b0a3e25",
+      "name": "CONVERTE ARQUIVO DE AUDIO",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        -380,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toBinary",
+        "sourceProperty": "data",
+        "options": {
+          "fileName": "file.png",
+          "mimeType": "image/png"
+        }
+      },
+      "id": "9f5930bb-ff0b-4737-873e-d4c007bd4cf6",
+      "name": "CONVERTE ARQUIVO DE IMAGEM",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        -380,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3c5ccbc9-69d1-4b13-a7c3-e6945bc8c655",
+              "name": "data",
+              "value": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.base64}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0ea20df0-54f3-4bb4-9af6-d370d1703160",
+      "name": "NORMATIZA DADOS DO ARQUIVO IMAGEM",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -580,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3c5ccbc9-69d1-4b13-a7c3-e6945bc8c655",
+              "name": "data",
+              "value": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.base64}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6e03ff41-c34e-4800-b4ae-6f156016989b",
+      "name": "NORMATIZA DADOS DO ARQUIVO AUDIO",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -560,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "text": "Faça um resumo curto do conteúdo da imagem. Remova os acentos e hifens da mensagem de retorno",
+        "inputType": "base64",
+        "options": {}
+      },
+      "id": "edc7cfe9-b1bd-4118-91e4-1d40a1039079",
+      "name": "ANALISE DE IMAGEM",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        -160,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "ade56c50-1520-4760-8df5-e99617d6d3ad",
+              "leftValue": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.arquivoCaption }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "898ee376-bdf7-4d6a-96ac-11d96a584c18",
+      "name": "CHECA SE A IMGEM TEM CAPTION",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        60,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('PEGA SESSION ID').item.json.sessionId }}",
+        "messageData": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.conteudo }}",
+        "tail": true
+      },
+      "id": "6dedc459-cff2-4854-86ee-b0ade96aaaf3",
+      "name": "MEMORIA TEXTO",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        280,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('PEGA SESSION ID').item.json.sessionId }}",
+        "messageData": "={{ $json.text }}",
+        "tail": true
+      },
+      "id": "db77030f-08b1-4213-8a4c-11081f851a02",
+      "name": "MEMORIA AUDIO",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        280,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.sessionId }}",
+        "messageData": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.arquivoCaption }}, {{ $json.content.replace(/\\n/g, \"\\\\n\").replace(/['\"]/g, '').trim()  }}",
+        "tail": true
+      },
+      "id": "4a6f16a6-d9b3-4d10-9e50-6ab6413f7089",
+      "name": "MEMORIA IMAGEM CAPTION",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        280,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "push",
+        "list": "={{ $('PEGA SESSION ID').item.json.sessionId }}",
+        "messageData": "={{ $json.content.replace(/\\n/g, \"\\\\n\").replace(/['\"]/g, '').trim()  }}",
+        "tail": true
+      },
+      "id": "a4502a45-c29f-403a-a04c-c8fcc6feb4a7",
+      "name": "MEMORIA IMAGEM",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        280,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 280,
+        "width": 320,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1720,
+        -600
+      ],
+      "typeVersion": 1,
+      "id": "20df245e-676d-4743-8f62-6dd50a416a28",
+      "name": "Sticky Note33"
+    },
+    {
+      "parameters": {
+        "content": "## CREATE dados_cliente",
+        "height": 80,
+        "width": 280,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1700,
+        -620
+      ],
+      "typeVersion": 1,
+      "id": "caae2ecd-e2ce-4008-85ed-27672bbba9ed",
+      "name": "Sticky Note34"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "create table crm_ead_dados_cliente (\n  id bigserial primary key,\n  created_at TIMESTAMPTZ, \n  telefone text, \n  sessionid text\n);",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        -1660,
+        -500
+      ],
+      "id": "26dcc6f0-eab2-4b56-be43-d240456845d7",
+      "name": "CREATE dados_cliente",
+      "credentials": {
+        "postgres": {
+          "id": "hacGUOgZXMZwbSJI",
+          "name": "EVODEV-AUTOMATIONS-SUPABASE"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "tableId": "dados_cliente",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "telefone",
+              "keyValue": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.celular }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -1740,
+        -20
+      ],
+      "id": "aa019307-a043-4793-aa9c-c3ff670ab18e",
+      "name": "PEGA CLIENTE",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "4a6d9aac-8565-4c58-abe3-8741393a5535",
+              "leftValue": "={{ $json.telefone }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1580,
+        -20
+      ],
+      "id": "d6bca491-7a8e-432c-98a3-5097dea743b3",
+      "name": "CHECA SE CLIENTE EXISTE"
+    },
+    {
+      "parameters": {
+        "tableId": "dados_cliente",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "sessionid",
+              "fieldValue": "={{ $json.data }}"
+            },
+            {
+              "fieldId": "telefone",
+              "fieldValue": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.celular }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        -1180,
+        80
+      ],
+      "id": "4c0462d3-6ba4-4eb3-b15a-e4863cf52888",
+      "name": "CRIA REGISTRO DO CLIENTE"
+    },
+    {
+      "parameters": {
+        "jsCode": "let sessionid1 = null;\nlet sessionid2 = null;\n\ntry {\n  const node1 = $('GERA SESSION ID');\n  if (node1 && node1.first()?.json?.data) {\n    sessionid1 = node1.first().json.data;\n  }\n} catch (e) {\n  // Nó não executado ou erro ao acessar\n}\n\ntry {\n  const node2 = $('PEGA CLIENTE');\n  if (node2 && node2.first()?.json?.sessionid) {\n    sessionid2 = node2.first().json.sessionid;\n  }\n} catch (e) {\n  // Nó não executado ou erro ao acessar\n}\n\n// Retorna o primeiro sessionid disponível, ou null\nreturn [{ sessionId: sessionid1 || sessionid2 || null }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1020,
+        -60
+      ],
+      "id": "ae06d1d6-5f4c-4a44-8a3d-c49cdf8f3aed",
+      "name": "PEGA SESSION ID"
+    },
+    {
+      "parameters": {
+        "action": "generate"
+      },
+      "type": "n8n-nodes-base.crypto",
+      "typeVersion": 1,
+      "position": [
+        -1380,
+        80
+      ],
+      "id": "ac48d747-e9c5-4940-b1f1-81492e5cc107",
+      "name": "GERA SESSION ID"
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 820,
+        "width": 940
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1820,
+        -160
+      ],
+      "typeVersion": 1,
+      "id": "bb95c06a-8708-464e-ae1a-8359cff0c458",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "## GRAVA TELEFONE DO CLIENTE",
+        "height": 80,
+        "width": 580,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1800,
+        -200
+      ],
+      "typeVersion": 1,
+      "id": "df6f7268-65a3-4288-a1ac-7f4d08be3486",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "amount": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.tempoEsperaMensagemPicotada }}"
+      },
+      "id": "f14e2374-0171-4878-ae11-cec712d1aee0",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        180
+      ],
+      "webhookId": "2a0e1031-b578-410e-99cc-b9d5ce725f75"
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 820,
+        "width": 1320
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        540,
+        -160
+      ],
+      "typeVersion": 1,
+      "id": "0a0a5c48-d4c7-4d63-b104-681917a3c065",
+      "name": "Sticky Note17"
+    },
+    {
+      "parameters": {
+        "content": "## MENSAGEM PICOTADA",
+        "height": 80,
+        "width": 760,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        560,
+        -200
+      ],
+      "typeVersion": 1,
+      "id": "afe50012-bbd3-41c4-bc77-2a1180814f31",
+      "name": "Sticky Note10"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "key": "={{ $('PEGA SESSION ID').item.json.sessionId }}",
+        "options": {}
+      },
+      "id": "636b8f51-da34-4411-90ba-ca9787f6ddea",
+      "name": "PEGA MENSAGEM 1",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        580,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "key": "={{ $('PEGA SESSION ID').item.json.sessionId }}",
+        "options": {}
+      },
+      "id": "eb94e009-2780-457a-be38-587590435e09",
+      "name": "PEGA MENSAGEM 2",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        180
+      ],
+      "credentials": {
+        "redis": {
+          "id": "Kw2oHiXMU4Hmdeyh",
+          "name": "REDIS AUTH"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f336a1ff-e577-489d-a739-1eb8bd509245",
+              "name": "mensagem_2",
+              "value": "={{ $('PEGA MENSAGEM 2').item.json.propertyName }}",
+              "type": "string"
+            },
+            {
+              "id": "946d1420-e379-46e3-8fcd-3816340fbabb",
+              "name": "mensagem_1",
+              "value": "={{ $('PEGA MENSAGEM 1').item.json.propertyName }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "229e1633-bf91-444a-94d0-1e8be52da601",
+      "name": "EDITA VALOR MENSAGENS",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1240,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d5a342e9-585b-42ea-be44-644adae10199",
+              "leftValue": "={{ $json.mensagem_2 }}",
+              "rightValue": "={{ $json.mensagem_1 }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "dbe8708f-9a72-44df-b30c-d6f3451cb4a8",
+      "name": "COMPARA AS MEMORIAS",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1460,
+        180
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "33583fec-228e-4f5a-abfa-e3e57b09af91",
+      "name": "NAO FAZ NADA",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $('COMPARA AS MEMORIAS').first().json.mensagem_2; // Obtém o valor de Redis2 do nó \"If\"\n\n// Verifica se o dado é uma string que representa um array, e converte se necessário\nlet array = Array.isArray(data) ? data : JSON.parse(data);\n\n// Junta os elementos do array com um espaço entre eles\nconst mensagem_completa = array.join(\" \");\n\n// Retorna o resultado com o nome da variável \"mensagem_completa\"\nreturn [{ json: { mensagem_completa } }];\n"
+      },
+      "id": "acae88be-32cc-455a-940f-54d29b755418",
+      "name": "RETORNA MENSAGEM COMPLETA",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1700,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "id": "0985904e-7d4e-4fba-ae26-2c44200855e1",
+                    "leftValue": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.tipo }}",
+                    "rightValue": "imageMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "imagem"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "id": "52aaf749-fe4f-44e4-880e-15b2bfc027f1",
+                    "leftValue": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.tipo }}}}",
+                    "rightValue": "extendedTextMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "text"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "id": "e514e613-fd6a-48bd-b0ae-bae2448c810e",
+                    "leftValue": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.tipo }}",
+                    "rightValue": "conversation",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "text"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.tipo }}",
+                    "rightValue": "audioMessage",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "audio"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d2f2fb43-ccbd-4271-8ccf-39056b60f9e2",
+      "name": "Switch3",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        2540,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output }}",
+                    "rightValue": "https://meet.google.com/",
+                    "operator": {
+                      "type": "string",
+                      "operation": "notContains"
+                    },
+                    "id": "688e7624-00b1-4b2e-beea-c22d303a1669"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Fluxo Normal"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "820760d6-3546-4007-8917-55d366a74261",
+                    "leftValue": "={{ $json.output }}",
+                    "rightValue": "https://meet.google.com",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Avisa grupo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2320,
+        80
+      ],
+      "id": "17346432-04b2-4ed1-b9fa-bac507705c2a",
+      "name": "Switch2"
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 820,
+        "width": 880
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1880,
+        -160
+      ],
+      "typeVersion": 1,
+      "id": "ae17114b-ddb8-4469-a2d7-e9ae2eb6cc14",
+      "name": "Sticky Note18"
+    },
+    {
+      "parameters": {
+        "content": "## AGENTE DE ATENDIMENTO",
+        "height": 80,
+        "width": 760,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1900,
+        -180
+      ],
+      "typeVersion": 1,
+      "id": "14307107-0cb0-43e7-bfab-e220ea5512c4",
+      "name": "Sticky Note11"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.mensagem_completa }}",
+        "options": {
+          "systemMessage": "=Voce é uma atendente"
+        }
+      },
+      "id": "322dfeab-a10a-4da5-b3c5-dcabde430672",
+      "name": "ATENDENTE",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [
+        1940,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        300
+      ],
+      "id": "51bb36d9-e996-4d8b-abfb-44a3c5046e16",
+      "name": "GPT-4o-MINI",
+      "credentials": {
+        "openAiApi": {
+          "id": "z7UeTfkwunE6Y30g",
+          "name": "CRM-EAD-TESTS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('PEGA SESSION ID').item.json.sessionId }}",
+        "tableName": "n8n_crm_ead_chat_histories",
+        "contextWindowLength": 100
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        2060,
+        300
+      ],
+      "id": "43a0b9cb-fc57-4a44-8c3e-8a0096c9aba9",
+      "name": "POSTGRESS CHAT MEMORY",
+      "credentials": {
+        "postgres": {
+          "id": "hacGUOgZXMZwbSJI",
+          "name": "EVODEV-AUTOMATIONS-SUPABASE"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 1.2
+      },
+      "id": "a88332f5-89b7-4235-b47d-7f9c67be235b",
+      "name": "1,2s1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        4060,
+        -580
+      ],
+      "webhookId": "1f8ddf7a-e468-4ec1-b36b-df7cad1bc6d2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "6d7762af-b174-4045-a84c-e9c612022b21",
+      "name": "Loop Over Items3",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        3400,
+        -500
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "3296970b-cad2-4f49-a7c6-1d1fef58a718",
+      "name": "no.op",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        4280,
+        -500
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "da00ddc0-ce86-4d89-ac08-42399f5e32d3",
+      "name": "Replace Me",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3620,
+        -580
+      ]
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 500,
+        "width": 1720
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2760,
+        -660
+      ],
+      "typeVersion": 1,
+      "id": "928e6cea-41ae-41ae-b784-9e5212092e7e",
+      "name": "Sticky Note20"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        2820,
+        -280
+      ],
+      "id": "c670aa3a-4218-4b50-b2b6-02447882f6ea",
+      "name": "GPT-4o-MINI1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Whatsapp message to be splitted and formated: {{ $json.output }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=Por favor, gere a saída no seguinte formato JSON:\n{\n  \"messages\": [\n    \"splitedMessage\",\n    \"splitedMessage\",\n    \"splitedMessage\"\n  ]\n}\n\nAs mensagens devem ser divididas de forma natural, afinal estamos conversando com um humano, não é mesmo?\n\nCertifique-se de que a resposta siga exatamente essa estrutura, incluindo os colchetes e as aspas.\n\n### Jamais separe uma mensagem vazia.\n\n### Certifique-se de que a resposta siga exatamente essa estrutura abaixo, deixando somente entre '*' para negrito e nunca fugindo das demais regras de markdown do whatsapp:\n    - *negrito* (substitua '**' por '*')\n    - ~tachado~ (caso seja algo que foi excluído ou alterado)\n    - _itálico_.(extremamente raro)\n    - `link` (usar sempre em todos os links)\n\nTudo o que for link, pode colocar entre \"`\", ou seja, na seguinte formatação: `www.link.com.br`\n"
+            }
+          ]
+        }
+      },
+      "id": "396060f0-0af1-48ca-b6fb-5f31fb1e987b",
+      "name": "PARSE MENSAGEM",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.4,
+      "position": [
+        2800,
+        -500
+      ]
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"messages\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    }\n  },\n  \"required\": [\"messages\"]\n}"
+      },
+      "id": "9fc64d06-67f6-40b9-9371-c658b09cd27b",
+      "name": "SAIDA DO PARSER",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        2940,
+        -280
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output.messages",
+        "options": {
+          "destinationFieldName": "output"
+        }
+      },
+      "id": "b58fa353-6df6-4a31-8880-91ccc172ea55",
+      "name": "MENSAGEM SEPARADA",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        3180,
+        -500
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## RESPOSTA COM TEXTO HUMANIZADO",
+        "height": 80,
+        "width": 760,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2780,
+        -700
+      ],
+      "typeVersion": 1,
+      "id": "127cc9ce-fd10-446a-8b36-4b4689acfc22",
+      "name": "Sticky Note12"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.evolution.dominio }}/message/sendText/{{ $('NORMATIZAÇÃO DE DADOS').item.json.evolution.instancia }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{  $('NORMATIZAÇÃO DE DADOS').item.json.evolution.apiKey }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{  $('NORMATIZAÇÃO DE DADOS').item.json.celular }}"
+            },
+            {
+              "name": "text",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "name": "linkPreview",
+              "value": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.linkPreview }}"
+            },
+            {
+              "name": "delay",
+              "value": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.delayDigitando }}"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "id": "f54e0763-1ad9-4f68-8d88-c7b741334332",
+      "name": "RESPONSTA EM TEXTO",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3840,
+        -580
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "options": {}
+      },
+      "id": "fecf46ce-23e4-47a4-a7d4-1b929486f58f",
+      "name": "Audio-Base64-Extract from File",
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        3300,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.elevenlabs.io/v1/text-to-speech/9BWtsMINqrJLrRacOk9x",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "xi-api-key",
+              "value": "=sk_e72e184e2f18e016ac5a135d002a2955cc0e83ac6e441a27"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n   \"text\":\"'{{ $json.textoSemQuebrasNemEmojis }}'\",\n   \"model_id\":\"eleven_multilingual_v2\",\n   \"voice_settings\":{\n      \"stability\":0.5,\n      \"similarity_boost\":0.8,\n      \"style\":0.0,\n      \"use_speaker_boost\":true\n   }\n} ",
+        "options": {}
+      },
+      "id": "5271e240-3f96-4a63-8115-c9d2b579a7f7",
+      "name": "ElevenLabsGenerateVoice",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        3100,
+        20
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "content": "",
+        "height": 300,
+        "width": 780,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2880,
+        -100
+      ],
+      "typeVersion": 1,
+      "id": "bda45320-3f3e-489c-8d7b-de98cf47a850",
+      "name": "Sticky Note24"
+    },
+    {
+      "parameters": {
+        "content": "# Resposta em Áudio",
+        "height": 80,
+        "width": 376,
+        "color": 5
+      },
+      "id": "4d4e3aaf-65d8-44c9-8d19-5ca7f3c6b94f",
+      "name": "Sticky Note25",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2900,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Obtém o primeiro item do fluxo\nconst item = $input.first();\n\n// Garante que há dados na entrada\nif (!item || !item.json || !item.json.output) {\n  throw new Error(\"A chave 'output' não foi encontrada no JSON de entrada.\");\n}\n\n// Processa o texto removendo todas as quebras de linha e emojis\nconst textoEntrada = item.json.output; // Use a chave correta para pegar o texto de entrada\n\n// Remove quebras de linha (\\n)\nlet textoProcessado = textoEntrada.replace(/\\n/g, \"\");\n\n// Remove emojis\ntextoProcessado = textoProcessado.replace(\n  /[\\u{1F600}-\\u{1F64F}]|[\\u{1F300}-\\u{1F5FF}]|[\\u{1F680}-\\u{1F6FF}]|[\\u{1F700}-\\u{1F77F}]|[\\u{1F780}-\\u{1F7FF}]|[\\u{1F800}-\\u{1F8FF}]|[\\u{1F900}-\\u{1F9FF}]|[\\u{1FA00}-\\u{1FA6F}]|[\\u{1FA70}-\\u{1FAFF}]|[\\u{2600}-\\u{26FF}]|[\\u{2700}-\\u{27BF}]|[\\u{FE00}-\\u{FE0F}]|[\\u{1F1E0}-\\u{1F1FF}]/gu,\n  \"\"\n);\n\n// Retorna o resultado\nreturn {\n  textoOriginal: textoEntrada,\n  textoSemQuebrasNemEmojis: textoProcessado,\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2940,
+        20
+      ],
+      "id": "fbe03cf4-d0b6-4edd-8056-7ea913f73516",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "options_Create_instance": {}
+      },
+      "type": "n8n-nodes-evolution-api.evolutionApi",
+      "typeVersion": 1,
+      "position": [
+        3460,
+        20
+      ],
+      "id": "32dca922-7a3a-49df-84df-d482ea0aa47d",
+      "name": "Evolution API3"
+    }
+  ],
+  "connections": {
+    "RECEBE DADOS DA MENSAGEM": {
+      "main": [
+        [
+          {
+            "node": "NORMATIZAÇÃO DE DADOS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NORMATIZAÇÃO DE DADOS": {
+      "main": [
+        [
+          {
+            "node": "LOG DE EXECUÇÃO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LOG DE EXECUÇÃO": {
+      "main": [
+        [
+          {
+            "node": "CHECA ORIGEM DA MENSAGEM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CHECA ATENDIMENTO HUMANO": {
+      "main": [
+        [
+          {
+            "node": "CHECA ATENDIMENTO(BOT/HUMANO)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "MEMORIA AUDIO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CHECA ORIGEM DA MENSAGEM": {
+      "main": [
+        [
+          {
+            "node": "CHECA ATENDIMENTO HUMANO",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "PAUSA BOT PARA ATENDIMENTO HUMANO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CHECA ATENDIMENTO(BOT/HUMANO)": {
+      "main": [
+        [],
+        [
+          {
+            "node": "PEGA CLIENTE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CHECA TIPO DE MENSAGEM": {
+      "main": [
+        [
+          {
+            "node": "MEMORIA TEXTO",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "MEMORIA TEXTO",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "NORMATIZA DADOS DO ARQUIVO AUDIO",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "NORMATIZA DADOS DO ARQUIVO IMAGEM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CONVERTE ARQUIVO DE AUDIO": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CONVERTE ARQUIVO DE IMAGEM": {
+      "main": [
+        [
+          {
+            "node": "ANALISE DE IMAGEM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NORMATIZA DADOS DO ARQUIVO IMAGEM": {
+      "main": [
+        [
+          {
+            "node": "CONVERTE ARQUIVO DE IMAGEM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NORMATIZA DADOS DO ARQUIVO AUDIO": {
+      "main": [
+        [
+          {
+            "node": "CONVERTE ARQUIVO DE AUDIO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ANALISE DE IMAGEM": {
+      "main": [
+        [
+          {
+            "node": "CHECA SE A IMGEM TEM CAPTION",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CHECA SE A IMGEM TEM CAPTION": {
+      "main": [
+        [
+          {
+            "node": "MEMORIA IMAGEM CAPTION",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "MEMORIA IMAGEM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PEGA CLIENTE": {
+      "main": [
+        [
+          {
+            "node": "CHECA SE CLIENTE EXISTE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CHECA SE CLIENTE EXISTE": {
+      "main": [
+        [
+          {
+            "node": "PEGA SESSION ID",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "GERA SESSION ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CRIA REGISTRO DO CLIENTE": {
+      "main": [
+        [
+          {
+            "node": "PEGA SESSION ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GERA SESSION ID": {
+      "main": [
+        [
+          {
+            "node": "CRIA REGISTRO DO CLIENTE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PEGA SESSION ID": {
+      "main": [
+        [
+          {
+            "node": "CHECA TIPO DE MENSAGEM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "PEGA MENSAGEM 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MEMORIA TEXTO": {
+      "main": [
+        [
+          {
+            "node": "PEGA MENSAGEM 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MEMORIA AUDIO": {
+      "main": [
+        [
+          {
+            "node": "PEGA MENSAGEM 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MEMORIA IMAGEM CAPTION": {
+      "main": [
+        [
+          {
+            "node": "PEGA MENSAGEM 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MEMORIA IMAGEM": {
+      "main": [
+        [
+          {
+            "node": "PEGA MENSAGEM 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PEGA MENSAGEM 1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PEGA MENSAGEM 2": {
+      "main": [
+        [
+          {
+            "node": "EDITA VALOR MENSAGENS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "EDITA VALOR MENSAGENS": {
+      "main": [
+        [
+          {
+            "node": "COMPARA AS MEMORIAS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "COMPARA AS MEMORIAS": {
+      "main": [
+        [
+          {
+            "node": "RETORNA MENSAGEM COMPLETA",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "NAO FAZ NADA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch2": {
+      "main": [
+        [
+          {
+            "node": "Switch3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RETORNA MENSAGEM COMPLETA": {
+      "main": [
+        [
+          {
+            "node": "ATENDENTE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ATENDENTE": {
+      "main": [
+        [
+          {
+            "node": "Switch2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT-4o-MINI": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "ATENDENTE",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "POSTGRESS CHAT MEMORY": {
+      "ai_memory": [
+        [
+          {
+            "node": "ATENDENTE",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1,2s1": {
+      "main": [
+        [
+          {
+            "node": "no.op",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items3": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "no.op": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch3": {
+      "main": [
+        [
+          {
+            "node": "PARSE MENSAGEM",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "PARSE MENSAGEM",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "PARSE MENSAGEM",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT-4o-MINI1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "PARSE MENSAGEM",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PARSE MENSAGEM": {
+      "main": [
+        [
+          {
+            "node": "MENSAGEM SEPARADA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        [
+          {
+            "node": "RESPONSTA EM TEXTO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SAIDA DO PARSER": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "PARSE MENSAGEM",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MENSAGEM SEPARADA": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RESPONSTA EM TEXTO": {
+      "main": [
+        [
+          {
+            "node": "1,2s1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ElevenLabsGenerateVoice": {
+      "main": [
+        [
+          {
+            "node": "Audio-Base64-Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "ElevenLabsGenerateVoice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "saveDataSuccessExecution": "all"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {
+    "RECEBE DADOS DA MENSAGEM": [
+      {
+        "json": {
+          "headers": {
+            "host": "webhooks.evodev.com.br",
+            "user-agent": "axios/1.7.9",
+            "content-length": "37991",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "webhooks.evodev.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "traefik_traefik.1",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "event": "messages.upsert",
+            "instance": "MASTER BOT - TEST",
+            "data": {
+              "key": {
+                "remoteJid": "5511987676642@s.whatsapp.net",
+                "fromMe": false,
+                "id": "3F17D49D36EDEE89F025"
+              },
+              "pushName": "Valente Araújo",
+              "status": "DELIVERY_ACK",
+              "message": {
+                "audioMessage": {
+                  "url": "https://mmg.whatsapp.net/v/t62.7117-24/21393266_708736291713570_4385041590957169267_n.enc?ccb=11-4&oh=01_Q5Aa1QF15Q-NNaJxqa8E-Gi1g25FI4EZhO1FfsaL3glcehRTLQ&oe=683CAC90&_nc_sid=5e03e0&mms3=true",
+                  "mimetype": "audio/ogg; codecs=opus",
+                  "fileSha256": "RVx+W0F0ngrrhw6DrVUTM8tE8zIuy7I2NJvMjD9LxKE=",
+                  "fileLength": "27090",
+                  "seconds": 4,
+                  "ptt": true,
+                  "mediaKey": "gy7tExYYfTnqONYy2o2TIFSQuuO+QonvpFPDn6qq3b4=",
+                  "fileEncSha256": "3w7RN7SCUEKuMXQExC0z0hZ9PT6ggUIND8FU3zwlfrc=",
+                  "directPath": "/v/t62.7117-24/21393266_708736291713570_4385041590957169267_n.enc?ccb=11-4&oh=01_Q5Aa1QF15Q-NNaJxqa8E-Gi1g25FI4EZhO1FfsaL3glcehRTLQ&oe=683CAC90&_nc_sid=5e03e0",
+                  "mediaKeyTimestamp": "1746224017",
+                  "contextInfo": {
+                    "expiration": 0,
+                    "ephemeralSettingTimestamp": "0",
+                    "disappearingMode": {
+                      "initiator": "CHANGED_IN_CHAT"
+                    }
+                  },
+                  "streamingSidecar": "ixn6kVruWGloUg==",
+                  "waveform": "AAABAwcKDRAYIysrLC8yNTY3NjU1NjY2NjIuLC8yKyIiKjI6QT83MjIyLispLTAyMzQ0MzIwLCYlLTQjDQECAw=="
+                },
+                "messageContextInfo": {
+                  "deviceListMetadata": {
+                    "senderKeyHash": "K624orVZ0KDF7g==",
+                    "senderTimestamp": "1745955289",
+                    "recipientKeyHash": "fxCW8+RsoSI9SA==",
+                    "recipientTimestamp": "1746223262"
+                  },
+                  "deviceListMetadataVersion": 2
+                },
+                "base64": "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"
+              },
+              "contextInfo": {
+                "expiration": 0,
+                "ephemeralSettingTimestamp": "0",
+                "disappearingMode": {
+                  "initiator": "CHANGED_IN_CHAT"
+                }
+              },
+              "messageType": "audioMessage",
+              "messageTimestamp": 1746224018,
+              "instanceId": "b5a47e1d-78fa-4595-a603-c92fd51f7287",
+              "source": "unknown"
+            },
+            "destination": "https://webhooks.evodev.com.br/webhook/bot-master",
+            "date_time": "2025-05-02T19:13:38.725Z",
+            "sender": "5511915066857@s.whatsapp.net",
+            "server_url": "https://wsapi.evodev.com.br",
+            "apikey": "923DF27D7EAB-45B3-9997-02A1841E7875"
+          },
+          "webhookUrl": "https://webhooks.evodev.com.br/webhook/bot-master",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "versionId": "cc214154-04e5-44af-9aee-57a023c90388",
+  "triggerCount": 1,
+  "tags": [
+    {
+      "createdAt": "2025-05-28T15:49:06.963Z",
+      "updatedAt": "2025-05-28T15:49:06.963Z",
+      "id": "WEuCtEnR4zEl8xjl",
+      "name": "CRM-EAD"
+    }
+  ],
+  "repository_name": "n8n-backup-crm-ead"
+}
