@@ -1,6 +1,6 @@
 {
   "createdAt": "2025-05-28T15:43:55.027Z",
-  "updatedAt": "2025-05-29T00:54:27.038Z",
+  "updatedAt": "2025-05-29T14:15:57.396Z",
   "id": "VzzKHDHJQodwZcB8",
   "name": "CRM-EAD",
   "active": true,
@@ -15,7 +15,7 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -2780,
+        -2580,
         -660
       ],
       "typeVersion": 1,
@@ -30,7 +30,7 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -2800,
+        -2600,
         -620
       ],
       "typeVersion": 1,
@@ -45,7 +45,7 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -2280,
+        -2080,
         -620
       ],
       "typeVersion": 1,
@@ -283,7 +283,7 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.6,
       "position": [
-        -160,
+        -100,
         120
       ],
       "credentials": {
@@ -586,7 +586,7 @@
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
       "position": [
-        -380,
+        -320,
         120
       ]
     },
@@ -604,7 +604,7 @@
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
       "position": [
-        -380,
+        -320,
         380
       ]
     },
@@ -627,7 +627,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -580,
+        -520,
         380
       ]
     },
@@ -650,7 +650,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -560,
+        -500,
         120
       ]
     },
@@ -673,7 +673,7 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.6,
       "position": [
-        -160,
+        -100,
         380
       ],
       "credentials": {
@@ -713,7 +713,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        60,
+        120,
         380
       ]
     },
@@ -729,7 +729,7 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        280,
+        340,
         -60
       ],
       "credentials": {
@@ -751,7 +751,7 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        280,
+        340,
         120
       ],
       "credentials": {
@@ -764,7 +764,7 @@
     {
       "parameters": {
         "operation": "push",
-        "list": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.sessionId }}",
+        "list": "={{ $('PEGA SESSION ID').item.json.sessionId }}",
         "messageData": "={{ $('NORMATIZAÇÃO DE DADOS').item.json.mensagem.arquivoCaption }}, {{ $json.content.replace(/\\n/g, \"\\\\n\").replace(/['\"]/g, '').trim()  }}",
         "tail": true
       },
@@ -773,7 +773,7 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        280,
+        340,
         300
       ],
       "credentials": {
@@ -795,7 +795,7 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        280,
+        340,
         480
       ],
       "credentials": {
@@ -814,7 +814,7 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1720,
+        -1520,
         -600
       ],
       "typeVersion": 1,
@@ -830,7 +830,7 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1700,
+        -1500,
         -620
       ],
       "typeVersion": 1,
@@ -846,7 +846,7 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.5,
       "position": [
-        -1660,
+        -1460,
         -500
       ],
       "id": "26dcc6f0-eab2-4b56-be43-d240456845d7",
@@ -1005,7 +1005,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        820,
+        1000,
         200
       ],
       "webhookId": "2a0e1031-b578-410e-99cc-b9d5ce725f75"
@@ -1052,7 +1052,7 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        600,
+        780,
         200
       ],
       "credentials": {
@@ -1073,7 +1073,7 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        1040,
+        1220,
         200
       ],
       "credentials": {
@@ -1108,7 +1108,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1260,
+        1440,
         200
       ]
     },
@@ -1141,7 +1141,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1480,
+        1660,
         200
       ]
     },
@@ -1152,7 +1152,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1700,
+        1880,
         300
       ]
     },
@@ -1165,7 +1165,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1920,
+        2140,
         100
       ]
     },
@@ -1280,7 +1280,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3,
       "position": [
-        2580,
+        2800,
         20
       ]
     },
@@ -1320,7 +1320,7 @@
         "promptType": "define",
         "text": "={{ $json.mensagem_completa }}",
         "options": {
-          "systemMessage": "=## DATA E HORA ATUAL E DIA DA SEMANA\n- Data e hora: {{ $now.format('dd/MM/yyyy HH:mm') }}\n- Dia da Semana: {{ $now.extract('weekday') }}\n\n---\n\n## 🤖 IDENTIDADE DA ATENDENTE\nVocê é **Lívia**, uma atendente virtual especializada em orientação educacional da **UniFAVENI - Polo Caraguatatuba**. Atua com empatia, precisão e foco em conversão. Seus supervisores humanos são **Liliane** e **Mazinho**.\n\n---\n\n## ⚠️ LIMITE DE CONTEXTO (IMPORTANTE)\n\nVocê deve **responder apenas dentro do escopo para o qual foi treinada**, ou seja:\n\n- Informações sobre **cursos da UniFAVENI Caraguatatuba**\n- Dúvidas relacionadas a **matrícula, modalidades, valores e diferenciais**\n- Dados consultados da **base “DADOS_DOS_CURSOS”**\n\n❗ Nunca responda perguntas fora do tema educacional ou institucional.  \n❗ Se não souber algo, **consulte a base DADOS_DOS_CURSOS** antes de responder.\n\n---\n\n## 👋 SAUDAÇÃO E APRESENTAÇÃO INICIAL\n\nNa **primeira mensagem da conversa**, cumprimente o usuário com simpatia e se apresente:\n\n> Oi! 😊 Sou a **Lívia**, atendente da **UniFAVENI Caraguatatuba**.  \n> Posso te ajudar com informações sobre os cursos, valores ou matrícula. Me conta o que você precisa? 💬\n\nNão repita essa apresentação nas mensagens seguintes.\n\n---\n\n## 📚 DADOS INSTITUCIONAIS\n\nA UniFAVENI Caraguatatuba é um polo oficial do Centro Universitário FAVENI, com mais de 200 mil alunos no Brasil.  \nTodos os cursos são reconhecidos pelo MEC, com suporte pedagógico, AVA intuitivo e material digital moderno.\n\n---\n\n## 🎓 MODALIDADES DE CURSO\n\n- **Licenciaturas** → 4 anos  \n- **Bacharelados** → 4 a 5 anos  \n- **Tecnólogos** → 2 a 3 anos  \n- **Segunda Licenciatura** → 6 a 18 meses  \n- **Segunda Graduação** → 6 a 18 meses  \n- **Pós-graduação** → mínimo 6 meses  \n- **PEFD (Programa Especial de Formação Docente)**\n\n---\n\n## 🔒 REGRAS DE RESPOSTA POR ETAPAS\n\n- Ao ser perguntada sobre um curso, informe:\n  - Nome do curso\n  - Modalidade (ex: Bacharelado)\n  - Duração total\n\n- ❗ **Não informe valores, parcelas ou formas de pagamento, a menos que o usuário solicite.**\n- ❗ **Nunca ofereça valores por conta própria.**\n- ❗ **Não repita informações já fornecidas, a menos que o usuário peça.**\n- Sempre responda sobre **um único curso por vez**.\n- Use o histórico apenas como referência de contexto, **não como conteúdo de resposta.**\n\n---\n\n## 💬 EXEMPLOS DE RESPOSTAS\n\n### Quando perguntam sobre um curso:\n\n> O curso de **Administração** é um **Bacharelado** com duração de **4 anos**.  \n> Se quiser saber mais sobre ele, estou por aqui! 😊\n\n### Quando solicitam os valores:\n\n> Sobre os valores do curso de **Administração**:  \n> - 📆 **Parcelas**: 49x mensais  \n> - ✅ Com desconto (pagamento antecipado): R$ 119,90  \n> - 💰 Valor integral (pagamento no vencimento): R$ 179,90\n\n---\n\n## 💳 INFORMAÇÕES FINANCEIRAS\n\n- Segunda Licenciatura e Pós: taxa de matrícula de **R$ 149,90**\n- PIX à vista → **10% de desconto**\n- Parcelamento em até **5x sem juros** no cartão (quando aplicável)\n\n---\n\n## 🌟 DIFERENCIAIS\n\n- 100% EAD com flexibilidade\n- AVA acessível por celular\n- Certificação válida em todo o Brasil\n- Estágio e TCC (quando exigidos)\n- Suporte presencial e via WhatsApp\n\n---\n\n## 🔁 FLUXO DE ATENDIMENTO\n\n1. Saudar com simpatia (somente no início)  \n2. Identificar o interesse do usuário (curso ou área)  \n3. Apresentar dados do curso (sem valores)  \n4. Apresentar valores **somente se solicitado**  \n5. Solicitar **nome e e-mail** para envio de informações  \n6. Se não fornecer, **pergunte novamente com gentileza antes de finalizar**  \n7. Se mesmo assim não quiser passar, respeite e siga a conversa normalmente  \n8. Manter a conversa aberta com tom leve e natural  \n9. Encaminhar para suporte humano (Liliane ou Mazinho) se necessário  \n\n---\n\n## 📧 COLETA DE NOME E E-MAIL\n\nApós interagir com o usuário (e especialmente se ele pedir valores), pergunte de forma natural:\n\n> Posso te enviar mais detalhes sobre esse curso por e-mail 💙  \n> Me passa seu **nome** e **e-mail**, que eu te envio tudinho!\n\nSe o usuário não responder, pergunte novamente de forma leve **antes de finalizar**.\n\n> Ah! Consegui te ajudar? Se quiser receber por e-mail é só me passar seu nome e e-mail ✨\n\nCaso o usuário não queira informar, **continue a conversa normalmente**, sem forçar.\n\n---\n\n## 🧠 CONSULTA À BASE DE DADOS\n\nConsulte a base de dados \"DADOS_DOS_CURSOS\" sempre que necessário.  \n**Nunca adivinhe informações.**\n\n---\n\n## 🧠 CONTROLE DE CONTEXTO E RESPOSTAS\n\n- Nunca repita respostas anteriores automaticamente  \n- Nunca misture cursos diferentes na mesma resposta  \n- Evite redundâncias  \n- Não finalize a conversa por conta própria  \n- Use histórico apenas para **saber o tema atual**  \n- Evite frases como “se precisar de algo mais…”  \n- Prefira expressões leves como:\n\n> “Estou por aqui se quiser continuar!”  \n> “Se quiser falar de outro curso, é só me chamar 😄”\n\n---\n\n## 🛑 REGRAS DE ENCERRAMENTO DE CONVERSA\n\n- A conversa **deve permanecer aberta**  \n- Só encerre se o usuário disser claramente que está satisfeito ou deseja encerrar  \n- Use uma linguagem leve e acolhedora até o fim da interação\n\n---\n\n## ⏱ QUANDO CLASSIFICAR O LEAD\n\nRealize a **classificação interna do lead** assim que um dos seguintes eventos ocorrer:\n\n1. O usuário demonstra **interesse claro em um curso**  \n2. O usuário solicita **valores ou formas de pagamento**  \n3. O usuário fornece **nome ou e-mail**  \n4. O usuário expressa intenção de **matricular-se**\n\n---\n\n## 🧮 CRITÉRIO DE QUALIFICAÇÃO DO LEAD\n\nClassifique o nível do lead com base no comportamento do usuário:\n\n- **Lead Frio** → Apenas curiosidade. Ex: “Quais cursos vocês têm?”  \n- **Lead Morno** → Interesse por um curso, mas sem pedir valor ou matrícula  \n- **Lead Quente** → Pediu valores, falou de matrícula ou forneceu dados pessoais\n\n---\n\n## 📊 CLASSIFICAÇÃO DE LEAD (INTERNA)\n\nArmazene os seguintes dados:\n\n- **Nome**  \n- **E-mail**  \n- **Telefone (WhatsApp)**  \n- **Curso(s) de Interesse**  \n- **Modalidade(s)**  \n- **Pediu valores**: true/false  \n- **Intenção de matrícula**: true/false  \n- **Nível do lead**: Frio / Morno / Quente  \n- **Origem do lead**: WhatsApp  \n- **Encaminhado ao humano?**: Sim/Não  \n- **Observações**: Resumo breve do perfil e comportamento do usuário\n\n---\n\n## 📝 GERAÇÃO DE OBSERVAÇÃO (RESUMO DO LEAD)\n\nAo classificar o lead, gere um **breve resumo** no campo “Observações”, com base na conversa.  \nExemplo:\n\n> Interessado em Tecnólogo de RH. Já tem graduação e quer um curso rápido para mudar de área. Pediu valores e prazos.\n\n---\n\n## 📤 ENVIO DE DADOS PARA PLANILHA\n\nApós a classificação, envie os dados captados para:\n\n> **LEADS-UNIFAVENI-CARAGUATATUBA**\n\nInclua os seguintes campos:\n\n- Nome  \n- E-mail  \n- Telefone (WhatsApp)  \n- Curso(s) de interesse  \n- Modalidade(s)  \n- Pediu valores (true/false)  \n- Intenção de matrícula (true/false)  \n- Nível do lead (Frio, Morno, Quente)  \n- Origem do lead (WhatsApp)  \n- Encaminhado ao humano? (Sim/Não)  \n- Observações\n\n📌 Somente envie se tiver pelo menos:\n- Nome\n- Curso de interesse\n- E-mail **ou** intenção clara de matrícula\n\n---\n\n## 📲 LINKS ÚTEIS\n\n- Site: [https://caraguatatuba1.unifaveni.com/](https://caraguatatuba1.unifaveni.com/)  \n- Institucional: [https://caraguatatuba1.unifaveni.com/a-instituicao/](https://caraguatatuba1.unifaveni.com/a-instituicao/)  \n- WhatsApp:  \n  - Liliane: (12) 98160-2230  \n  - Mazinho: (12) 98820-7843\n\n---\n\n## 🎯 OBJETIVO FINAL\n\nConduzir o usuário com empatia, sem pressa, até a matrícula — respeitando o ritmo da conversa.  \nResponda com clareza, foco e linguagem acolhedora, **sem parecer robótico**.\n\n---\n\n🧘 **Take a deep breath and work on this problem step-by-step.**\n"
+          "systemMessage": "=## 📆 DATA E HORA ATUAL\n\n- 📅 Data: {{ $now.format('dd/MM/yyyy') }}\n- 🕒 Hora: {{ $now.format('HH:mm') }}\n- 📌 Dia da semana: {{ $now.format('EEEE') }}\n\n---\n\n## 🤖 IDENTIDADE DO AGENTE\n\n- Você é **Lívia**, uma agente virtual de atendimento da **UniFAVENI - Polo Caraguatatuba**.\n- Sua função principal é atuar como **SDR educacional**, conduzindo interessados até a decisão de matrícula.\n- Você responde exclusivamente sobre:\n  - Cursos da UniFAVENI disponíveis no polo Caraguatatuba\n  - Modalidades, valores (quando solicitado), prazos e diferenciais\n  - Processo de matrícula\n- Seu estilo de atendimento é:\n  - Acolhedor, humano, natural e empático\n  - Objetivo, claro e focado em conversão\n- Seus supervisores humanos são **Liliane** e **Mazinho**.\n- Sempre siga as regras da base de dados **“DADOS_DOS_CURSOS”**, sem inventar informações.\n- Nunca responda temas fora do escopo educacional institucional.\n\n---\n\n## 🎯 OBJETIVO PRINCIPAL\n\nSua missão é atuar como uma **SDR educacional virtual** da UniFAVENI Caraguatatuba.\n\nSeu principal objetivo é **conduzir o usuário com empatia até o ponto de decisão ou intenção de matrícula**, respeitando o ritmo da conversa.\n\n### Você deve:\n- Fornecer informações claras sobre cursos oferecidos no polo Caraguatatuba\n- Identificar o interesse principal do usuário (área, curso ou objetivo profissional)\n- Apresentar com clareza:\n  - Nome do curso\n  - Modalidade (Licenciatura, Tecnólogo, etc.)\n  - Duração do curso\n  - Diferenciais da UniFAVENI\n- Informar **valores apenas quando solicitado**\n- Estimular a coleta de nome e e-mail de forma natural e amigável\n- Classificar o nível de interesse do lead (Frio, Morno, Quente)\n- Encaminhar para um humano (Liliane ou Mazinho) se necessário\n\n### Você **nunca deve**:\n- Responder assuntos fora do escopo educacional\n- Fornecer valores sem que o usuário solicite\n- Encerrar a conversa por conta própria\n- Adivinhar ou inventar informações (consulte sempre a base: DADOS_DOS_CURSOS)\n\n---\n\n## 📍 ESCOPOS PERMITIDOS\n\nVocê só pode responder dentro do escopo educacional da UniFAVENI Polo Caraguatatuba.\n\n### ✅ Temas permitidos:\n- Cursos disponíveis no polo Caraguatatuba\n- Modalidades (Licenciatura, Tecnólogo, Bacharelado, etc.)\n- Duração dos cursos\n- Processo de matrícula\n- Valores e condições (somente quando solicitados)\n- Segunda graduação, segunda licenciatura e pós-graduação\n- PEFD (Programa Especial de Formação Docente)\n- Diferenciais da UniFAVENI\n- Reconhecimento pelo MEC\n- Suporte ao aluno (AVA, tutoria, presencial ou online)\n\n⚠️ Todas as respostas devem ser baseadas na base de dados **“DADOS_DOS_CURSOS”**.  \nSe a informação não estiver disponível, oriente que a equipe verificará.\n\n### ❌ Temas proibidos:\n- Assuntos não relacionados ao polo Caraguatatuba\n- Informações de cursos fora da base de dados\n- Dúvidas jurídicas, financeiras externas ou acadêmicas internas (como boletos, provas, etc.)\n- Suporte técnico ao sistema (AVA, login, senhas etc.)\n- Qualquer outro assunto fora do escopo educacional institucional\n\n> Se o usuário perguntar algo fora do permitido:\n> “Sou especializada em orientações sobre os cursos da UniFAVENI Caraguatatuba 😊 Posso te ajudar com isso!”\n\n---\n\n## 🔁 FLUXO DE ATENDIMENTO PADRÃO\n\n1. **👋 Saudação Inicial** (somente na primeira mensagem)  \n   > Oi! 😊 Sou a **Lívia**, atendente da **UniFAVENI Caraguatatuba**.  \n   > Posso te ajudar com informações sobre os cursos, valores ou matrícula. Me conta o que você precisa? 💬\n\n2. **🎯 Identificação do Interesse**  \n   Pergunte de forma natural qual curso ou área o usuário tem interesse.  \n   Se a pessoa mencionar uma dúvida genérica (ex: “quais cursos tem?”), responda listando **categorias de cursos** e incentive a escolha de um.\n\n3. **🧾 Informações do Curso**  \n   Quando o usuário disser o nome de um curso, responda com:\n   - ✅ Nome do curso\n   - 🎓 Modalidade (ex: Tecnólogo, Licenciatura)\n   - ⏳ Duração total do curso  \n   📌 Não ofereça valores ainda. Apenas informe o básico e incentive a continuar a conversa.\n\n4. **💰 Como informar os Valores (quando solicitado)**  \n   - 📆 **Plano de pagamento:** O curso pode ser dividido em **99 parcelas mensais**.\n   - ✅ **Valor com desconto:** R$ XX,XX  \n     > Se você conseguir se organizar para pagar **com até 5 dias de antecedência ao vencimento**, esse é o valor que vai aproveitar!  \n     > 💡 *É uma ótima forma de economizar durante todo o curso!*\n   - 💰 **Valor padrão:** R$ YY,YY  \n     > Esse é o valor válido para quem prefere pagar até a data de vencimento da parcela.\n\n5. **📧 Coleta de Nome e E-mail**  \n   Sempre que o usuário:\n   - Demonstrar interesse por um curso\n   - Solicitar valores\n   - Falar sobre matrícula  \n   Peça nome e e-mail de forma natural, amigável e sem pressionar:\n\n   > Posso te enviar todos os detalhes por e-mail, junto com o link para matrícula 💙  \n   > Me passa seu **nome** e **e-mail**, que eu te envio tudinho!\n\n   Se o usuário não responder:\n   > Ah! Consegui te ajudar? 😊  \n   > Se quiser receber tudinho por e-mail, é só me passar seu nome e e-mail que já te envio!\n\n   ❌ Se não quiser informar, **não insista**.  \n   ➕ Mantenha o tom acolhedor e continue normalmente.\n\n6. **🧠 Classificação do Lead**  \n   Classifique como Frio, Morno ou Quente conforme o comportamento.\n\n7. **📲 Encaminhamento para suporte humano (se necessário)**  \n   > Vou pedir para um dos nossos atendentes te ajudar melhor com isso 💬  \n   > Você pode falar com a **Liliane** pelo (12) 98160-2230 ou o **Mazinho** pelo (12) 98820-7843\n\n---\n\n## ✍️ FORMATO DE RESPOSTAS\n\n- Linguagem natural, leve e acolhedora\n- Tom humano e conversacional, como no WhatsApp\n- Nunca repita informações já ditas, a menos que o usuário peça\n- Não misture cursos diferentes na mesma resposta\n- Não finalize a conversa sozinho\n- Use frases como:\n  > “Se quiser falar de outro curso, é só me chamar 😄”  \n  > “Estou por aqui se quiser continuar!”\n\n---\n\n## 🔁 CONTROLE DE CONTEXTO E RESPOSTAS\n\n- Use o histórico apenas para entender o tema atual\n- Nunca reinicie assuntos por conta própria\n- Se o usuário voltar depois de horas/dias:\n  > “Oi! Que bom te ver por aqui de novo 😊 Você quer continuar falando sobre o curso de Pedagogia ou quer ver outra opção?”\n\n---\n\n## 🧠 PROCESSO DE TOMADA DE DECISÃO\n\n- Se o usuário perguntar sobre um curso → informe nome, modalidade e duração\n- Se pedir valor → use o bloco “Como informar os Valores”\n- Se mencionar matrícula → peça dados e encaminhe ao humano\n- Se mostrar interesse mas não pedir valores → incentive suavemente\n- Se pedir ajuda para escolher curso → faça perguntas abertas\n- Se perguntar fora do escopo → redirecione gentilmente\n- Se fornecer dados → classifique como Quente e envie à planilha\n- Se não souber responder → nunca invente; diga que irá verificar\n\n---\n\n## 🧮 CLASSIFICAÇÃO DO LEAD\n\n**Critérios:**\n- Frio: curiosidade\n- Morno: interesse sem valores\n- Quente: pediu valores, matrícula ou passou dados\n\n**Quando classificar:**\n1. Interesse claro por curso\n2. Pedido de valores\n3. Fala sobre matrícula\n4. Envia nome, e-mail ou WhatsApp\n\n---\n\n## 📤 ENVIO DE LEAD\n\nPlanilha: `LEADS-UNIFAVENI-CARAGUATATUBA`\n\n### Campos obrigatórios:\n- Nome\n- Curso de interesse\n- E-mail ou intenção de matrícula\n\n### Campos completos:\n- Nome\n- E-mail\n- Telefone (WhatsApp)\n- Curso(s) de interesse\n- Modalidade(s)\n- Pediu valores: true/false\n- Intenção de matrícula: true/false\n- Nível do lead: Frio / Morno / Quente\n- Origem: WhatsApp\n- Encaminhado ao humano: Sim / Não\n- Observações\n\nExemplo:\n> Interessado em Tecnólogo de RH. Já tem graduação e quer um curso rápido para mudar de área. Pediu valores e prazos.\n\n---\n\n## 🛑 ENCERRAMENTO DA CONVERSA\n\n- Nunca encerre sozinho\n- Só encerre se o usuário disser que terminou\n\nEncerramento leve:\n> “Imagina! Fico feliz por ter ajudado 😊  \n> Se quiser voltar a falar comigo depois, estarei por aqui!”\n\nSe o usuário sumir:\n> “Oi! Está por aí? Qualquer dúvida, só mandar aqui 😊”\n"
         }
       },
       "id": "322dfeab-a10a-4da5-b3c5-dcabde430672",
@@ -1328,7 +1328,7 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.6,
       "position": [
-        2200,
+        2420,
         60
       ]
     },
@@ -1339,7 +1339,7 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1,
       "position": [
-        2180,
+        2400,
         260
       ],
       "id": "51bb36d9-e996-4d8b-abfb-44a3c5046e16",
@@ -1361,7 +1361,7 @@
       "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
       "typeVersion": 1.3,
       "position": [
-        2320,
+        2540,
         260
       ],
       "id": "43a0b9cb-fc57-4a44-8c3e-8a0096c9aba9",
@@ -1382,7 +1382,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        4300,
+        4520,
         -20
       ],
       "webhookId": "1f8ddf7a-e468-4ec1-b36b-df7cad1bc6d2"
@@ -1396,7 +1396,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        3640,
+        3860,
         60
       ]
     },
@@ -1407,7 +1407,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4520,
+        4740,
         60
       ]
     },
@@ -1418,7 +1418,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3860,
+        4080,
         -20
       ]
     },
@@ -1444,7 +1444,7 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1,
       "position": [
-        3060,
+        3280,
         280
       ],
       "id": "c670aa3a-4218-4b50-b2b6-02447882f6ea",
@@ -1474,7 +1474,7 @@
       "type": "@n8n/n8n-nodes-langchain.chainLlm",
       "typeVersion": 1.4,
       "position": [
-        3040,
+        3260,
         60
       ]
     },
@@ -1488,7 +1488,7 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.2,
       "position": [
-        3180,
+        3400,
         280
       ]
     },
@@ -1504,7 +1504,7 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        3420,
+        3640,
         60
       ]
     },
@@ -1569,7 +1569,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        4080,
+        4300,
         -20
       ],
       "retryOnFail": true,
@@ -1868,7 +1868,7 @@
       "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
       "typeVersion": 1.1,
       "position": [
-        2300,
+        2520,
         400
       ],
       "id": "fc95e34d-394b-4bef-afdd-d0a46c605f3a",
@@ -1887,7 +1887,7 @@
       "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
       "typeVersion": 1.2,
       "position": [
-        2200,
+        2420,
         500
       ],
       "id": "c893a366-3ebd-44b8-baa0-8b583049040d",
@@ -1911,7 +1911,7 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        2640,
+        2860,
         400
       ],
       "id": "5ba03762-7668-42f4-9ed7-4b04d7d959e2",
@@ -1930,7 +1930,7 @@
       "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
       "typeVersion": 1.1,
       "position": [
-        2440,
+        2660,
         260
       ],
       "id": "4b7a7518-95c0-4e7c-bb04-a3b970e78f82",
@@ -2078,7 +2078,7 @@
       "type": "n8n-nodes-base.googleSheetsTool",
       "typeVersion": 4.6,
       "position": [
-        2760,
+        2980,
         260
       ],
       "id": "bd458b45-d139-4767-bf05-da7199ed307c",
@@ -2113,7 +2113,7 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        1700,
+        1880,
         100
       ],
       "credentials": {
@@ -2833,7 +2833,7 @@
           "headers": {
             "host": "webhooks.evodev.com.br",
             "user-agent": "axios/1.7.9",
-            "content-length": "1016",
+            "content-length": "1859",
             "accept-encoding": "gzip, compress, deflate, br",
             "content-type": "application/json",
             "x-forwarded-for": "172.18.0.1",
@@ -2847,26 +2847,46 @@
           "query": {},
           "body": {
             "event": "messages.upsert",
-            "instance": "AIGENTEGOV-APPOINTMENT-CONFIRMATION",
+            "instance": "CRM-EAD",
             "data": {
               "key": {
                 "remoteJid": "5511987676642@s.whatsapp.net",
                 "fromMe": false,
-                "id": "3F5ECC655ED815980A22"
+                "id": "3F35229D44A84105626B"
               },
               "pushName": "Valente Araújo",
               "status": "DELIVERY_ACK",
               "message": {
+                "audioMessage": {
+                  "url": "https://mmg.whatsapp.net/v/t62.7117-24/13974786_685783460726853_8579587168595892727_n.enc?ccb=11-4&oh=01_Q5Aa1gEowZjF8K2du7fTTUvLkFcVI7ymVbn2Lg4PgWlZvp4v-w&oe=685FE38E&_nc_sid=5e03e0&mms3=true",
+                  "mimetype": "audio/ogg; codecs=opus",
+                  "fileSha256": "ragNp1rVupyLlp03pF0RaMoriP2bUEkrwmPtvDmhEng=",
+                  "fileLength": "58506",
+                  "seconds": 9,
+                  "ptt": true,
+                  "mediaKey": "Y7SBJFxvAUz3lEiC9bPGjkIV+upoc2tHoF8ur7XDlr8=",
+                  "fileEncSha256": "bmE/JyyzO5qShQHnwMrneQOq9RV7XgeL6EXxlOQg+Q4=",
+                  "directPath": "/v/t62.7117-24/13974786_685783460726853_8579587168595892727_n.enc?ccb=11-4&oh=01_Q5Aa1gEowZjF8K2du7fTTUvLkFcVI7ymVbn2Lg4PgWlZvp4v-w&oe=685FE38E&_nc_sid=5e03e0",
+                  "mediaKeyTimestamp": "1748527076",
+                  "contextInfo": {
+                    "expiration": 0,
+                    "ephemeralSettingTimestamp": "0",
+                    "disappearingMode": {
+                      "initiator": "CHANGED_IN_CHAT"
+                    }
+                  },
+                  "streamingSidecar": "5b8Bxe+j/htBEg==",
+                  "waveform": "AAEJFC82NDQ0MS8wMRojODEiJTMzMzQmCBMrAQEIMTIxLzUuMxECAAABAQwnNR4gNSciLB8XFSoHFDMzLAYAAA=="
+                },
                 "messageContextInfo": {
                   "deviceListMetadata": {
                     "senderKeyHash": "K624orVZ0KDF7g==",
                     "senderTimestamp": "1747251324",
-                    "recipientKeyHash": "n2jecw4ojCGfEg==",
+                    "recipientKeyHash": "UnWbRbPDlh55lA==",
                     "recipientTimestamp": "1748369692"
                   },
                   "deviceListMetadataVersion": 2
-                },
-                "conversation": "Oi... queria saber sobre o curso de BIBLIOTECONOMIA"
+                }
               },
               "contextInfo": {
                 "expiration": 0,
@@ -2875,16 +2895,16 @@
                   "initiator": "CHANGED_IN_CHAT"
                 }
               },
-              "messageType": "conversation",
-              "messageTimestamp": 1748476643,
-              "instanceId": "7b1e3721-11f8-4197-887a-20c283e868ff",
+              "messageType": "audioMessage",
+              "messageTimestamp": 1748527077,
+              "instanceId": "8dffc96f-664b-472f-858a-7aa09c2755be",
               "source": "unknown"
             },
             "destination": "https://webhooks.evodev.com.br/webhook/crm-ead-faveni-leads",
-            "date_time": "2025-05-28T20:57:23.635Z",
+            "date_time": "2025-05-29T10:57:57.680Z",
             "sender": "5511915066857@s.whatsapp.net",
             "server_url": "https://wsapi.evodev.com.br",
-            "apikey": "300AC8DE385A-4C56-A6A2-3D04EF43740E"
+            "apikey": "7401F242FB3D-4A19-8851-C24732B47F54"
           },
           "webhookUrl": "https://webhooks.evodev.com.br/webhook/crm-ead-faveni-leads",
           "executionMode": "production"
@@ -2892,7 +2912,7 @@
       }
     ]
   },
-  "versionId": "c67724db-17aa-44c5-b43e-0dd73476b091",
+  "versionId": "e32551c3-a693-4112-aaed-9cfc8b135a6d",
   "triggerCount": 1,
   "tags": [
     {
