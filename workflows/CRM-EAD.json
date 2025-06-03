@@ -1,9 +1,9 @@
 {
   "createdAt": "2025-05-28T15:43:55.027Z",
-  "updatedAt": "2025-05-29T14:15:57.396Z",
+  "updatedAt": "2025-06-02T22:02:01.905Z",
   "id": "VzzKHDHJQodwZcB8",
   "name": "CRM-EAD",
-  "active": true,
+  "active": false,
   "isArchived": false,
   "nodes": [
     {
